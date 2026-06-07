@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Search</title>
+</head>
+<body>
+
+<h2>Customer Search</h2>
+
+<input type="text" id="customerName" placeholder="Enter Customer Name">
+<button onclick="searchCustomer()">Search</button>
+
+<h3>Result</h3>
+<p id="result"></p>
+
+<script>
+function searchCustomer() {
+
+    const customers = {
+        "Ravi": "9876543210",
+        "Priya": "9123456780",
+        "Arun": "9988776655",
+        "Meena": "9871234567",
+        "Karthik": "9001122334"
+    };
+
+    let name = document.getElementById("customerName").value;
+
+    if (customers[name]) {
+        document.getElementById("result").innerHTML =
+            "Customer Name: " + name +
+            "<br>Phone Number: " + customers[name];
+    } else {
+        document.getElementById("result").innerHTML =
+            "Customer not found!";
+    }
+}
